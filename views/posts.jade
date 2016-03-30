@@ -1,0 +1,13 @@
+h2= title
+table(border='1')
+  tr
+    th cedula
+    th nombre
+    th contenido
+  -if(posts)
+    -each post in posts
+        tr
+            td
+                a(href="/posts/"+post._id.toString()) #{post.usuario}
+            td #{post.nombre}
+            td #{post.post}

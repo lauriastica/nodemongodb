@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    table.table.table-hover
+        h2= title
+        thead(table = '')
+            tr
+                th cedula
+                th nombre
+                th cuenta
+                th password
+        -if(usuarios)
+            -each usuario in usuarios
+                tbody(table = '')
+                    tr
+                        td
+                            a(href="/find-user/"+usuario._id.toString()) #{usuario.cedula}
+                        td #{usuario.nombre}
+                        td #{usuario.cuenta}
+                        td #{usuario.password}
+                        td 
+                            a(href="/delete-user/"+usuario._id.toString()) borrar                 
+    a(href="/new-user/") Crear usuario
+                

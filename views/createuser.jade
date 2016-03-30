@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1= title
+    form(method='post', action='/new-user/')
+        table
+            tr
+                th Cedula        
+                td
+                    input(type='text', name='cedula')    
+            tr
+                th Nombre       
+                td
+                    input(type='text', name='nombre') 
+            tr
+                th Cuenta      
+                td
+                    input(type='text', name='cuenta')    
+            tr
+                th Clave      
+                td
+                    input(type='text', name='password')
+            tr
+                td
+                    input(type='submit', value="Crear")

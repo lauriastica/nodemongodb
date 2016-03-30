@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+  body
+  -if(usuarios)
+    -usuario = usuarios[0]
+    h1 datos de #{usuario.cedula}
+    form(method='post', action='/find-user/'+usuario._id target='_blank')
+        table
+            tr
+                th ID        
+                td
+                    input(type='text', name='id', value='#{usuario._id}', readonly) 
+            tr
+                th Cedula        
+                td
+                    input(type='text', name='cedula', value='#{usuario.cedula}')    
+            tr
+                th Nombre       
+                td
+                    input(type='text', name='nombre', value='#{usuario.nombre}') 
+            tr
+                th Cuenta      
+                td
+                    input(type='text', name='cuenta', value='#{usuario.cuenta}')    
+            tr
+                th Clave      
+                td
+                    input(type='text', name='password', value='#{usuario.password}')
+            tr
+                td
+                    input(type='submit', value="mododificar")
